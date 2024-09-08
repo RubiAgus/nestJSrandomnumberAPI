@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<header>debug Website</header>
+
+<html>
+
+<button onclick="test()">
+    Generar Número
+</button>
+<p1 your number is: id="debug" ></p1>
+
+</html>
+
+
+<script>
+
+
+function test(){
+        fetch ('http://localhost:3001/random-int',{method: 'POST'})
+        .then(response => response.json())
+        .then(data => {
+            console.log(data); //Returns information in the console
+            document.getElementById("debug").innerHTML = data.value;
+
+        })
+        
+        }
+        
+
+</script>
